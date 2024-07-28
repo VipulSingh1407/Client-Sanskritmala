@@ -53,7 +53,7 @@ const AdminDashboard = ({ user }) => {
 
   return (
     <Layout>
-      <div className="flex items-center ml-[10rem] justify-end min-h-screen ">
+      <div className="flex items-center ml-[1rem] justify-end min-h-screen ">
         <div className="p-6 bg-gray-800 rounded-lg shadow-lg w-full max-w-4xl">
           <h1 className="text-2xl font-bold mb-4 text-center text-caribbeangreen-200">Admin Dashboard</h1>
           <div className="mb-6">
