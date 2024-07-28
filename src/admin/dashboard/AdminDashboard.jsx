@@ -15,8 +15,8 @@ const AdminDashboard = ({ user }) => {
     totalCourses: 0,
     totalBooks: 0,
     totalUser: 0,
-    totalEbooks:0,
-    totalNotes:0
+    totalEbooks: 0,
+    totalNotes: 0
   });
 
   async function fetchStats() {
@@ -39,11 +39,11 @@ const AdminDashboard = ({ user }) => {
   }, []);
 
   const data = {
-    labels: ["Courses", "Books", "Users","Ebooks","Notes"],
+    labels: ["Courses", "Books", "Users", "Ebooks", "Notes"],
     datasets: [
       {
         label: "Total Stats",
-        data: [stats.totalCourses, stats.totalBooks, stats.totalUser,stats.totalEbooks,stats.totalNotes],
+        data: [stats.totalCourses, stats.totalBooks, stats.totalUser, stats.totalEbooks, stats.totalNotes],
         backgroundColor: "rgba(53, 162, 235, 0.5)", // Light blue color
         borderColor: "rgba(53, 162, 235, 1)", // Darker blue color
         borderWidth: 1,
@@ -53,8 +53,8 @@ const AdminDashboard = ({ user }) => {
 
   return (
     <Layout>
-      <div className="flex items-center ml-[1rem] justify-end min-h-screen ">
-        <div className="p-6 bg-gray-800 rounded-lg shadow-lg w-full max-w-4xl">
+      <div className="flex justify-center items-center min-h-screen bg-gray-900 p-4">
+        <div className="bg-gray-800 text-white rounded-lg shadow-lg p-6 max-w-4xl w-full">
           <h1 className="text-2xl font-bold mb-4 text-center text-caribbeangreen-200">Admin Dashboard</h1>
           <div className="mb-6">
             <Bar data={data} options={{
