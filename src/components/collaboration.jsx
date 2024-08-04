@@ -1,5 +1,5 @@
 import React from 'react';
-import university1 from '../assets/bhu.png';
+import university1 from '../assets/AICTE.png';
 import university2 from '../assets/iitd.png';
 import university3 from '../assets/niet.png';
 import university4 from '../assets/kv.png';
@@ -11,9 +11,9 @@ import HighlightText from './HighlightText';
 
 const TrustedBySection = () => {
   return (
-    <section className="py-10 px-4 md:py-20 md:px-8">
+    <section className="py-10 bg-gray-100 px-4 md:py-20 md:px-8">
       <div className="text-center mb-8 md:mb-12">
-        <h2 className="text-xl md:text-3xl font-bold text-gray-300 animate__animated animate__fadeInUp">
+        <h2 className="text-xl md:text-3xl font-bold text-black animate__animated animate__fadeInUp">
           Trusted by <HighlightText text={"10000+"}/> students globally
         </h2>
       </div>

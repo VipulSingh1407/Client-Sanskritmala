@@ -75,67 +75,67 @@ const UpdateBook = () => {
   };
 
   return (
-    <div className="flex justify-center py-28 items-center min-h-screen bg-gray-900 p-4">
-      <div className="bg-gray-800 text-white rounded-lg shadow-lg p-6 max-w-md w-full transition-transform transform hover:scale-105 duration-300 ease-in-out">
+    <div className="flex justify-center py-28 items-center min-h-screen bg-gray-100 p-4">
+      <div className="bg-gray-300 text-gray-900 rounded-lg shadow-lg p-6 max-w-md w-full transition-transform transform hover:scale-105 duration-300 ease-in-out">
         {book ? (
           <>
             <h2 className="text-3xl font-bold mb-6 text-center">Update Book</h2>
             <form onSubmit={submitHandler}>
               <div className="mb-4">
-                <label htmlFor="title" className="block text-gray-300 text-sm">Title</label>
+                <label htmlFor="title" className="block text-gray-800 text-sm">Title</label>
                 <input
                   type="text"
                   id="title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   required
-                  className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform duration-300 ease-in-out"
+                  className="mt-1 block w-full px-3 py-2 bg-white border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform duration-300 ease-in-out"
                 />
               </div>
 
               <div className="mb-4">
-                <label htmlFor="description" className="block text-gray-300 text-sm">Description</label>
+                <label htmlFor="description" className="block text-gray-800 text-sm">Description</label>
                 <textarea
                   id="description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   required
                   rows="4"
-                  className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform duration-300 ease-in-out"
+                  className="mt-1 block w-full px-3 py-2 bg-white border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform duration-300 ease-in-out"
                 />
               </div>
 
               <div className="mb-4">
-                <label htmlFor="author" className="block text-gray-300 text-sm">Author</label>
+                <label htmlFor="author" className="block text-gray-800 text-sm">Author</label>
                 <input
                   type="text"
                   id="author"
                   value={author}
                   onChange={(e) => setAuthor(e.target.value)}
                   required
-                  className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform duration-300 ease-in-out"
+                  className="mt-1 block w-full px-3 py-2 bg-white border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform duration-300 ease-in-out"
                 />
               </div>
 
               <div className="mb-4">
-                <label htmlFor="price" className="block text-gray-300 text-sm">Price</label>
+                <label htmlFor="price" className="block text-gray-800 text-sm">Price</label>
                 <input
                   type="number"
                   id="price"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                   required
-                  className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform duration-300 ease-in-out"
+                  className="mt-1 block w-full px-3 py-2 bg-white border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform duration-300 ease-in-out"
                 />
               </div>
 
               <div className="mb-4">
-                <label htmlFor="image" className="block text-gray-300 text-sm">Image</label>
+                <label htmlFor="image" className="block text-gray-800 text-sm">Image</label>
                 <input
                   type="file"
                   id="image"
                   onChange={changeImageHandler}
-                  className="mt-1 block w-full text-sm text-gray-500
+                  className="mt-1 block w-full text-sm text-gray-800
                      file:mr-4 file:py-2 file:px-4
                      file:rounded-md file:border-0
                      file:text-sm file:font-semibold
@@ -150,7 +150,7 @@ const UpdateBook = () => {
               <button
                 type="submit"
                 disabled={btnLoading}
-                className="w-full px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-300 ease-in-out"
+                className="w-full px-4 py-2 bg-blue1 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-300 ease-in-out"
               >
                 {btnLoading ? "Please Wait..." : "Update"}
               </button>

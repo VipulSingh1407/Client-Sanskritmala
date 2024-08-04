@@ -53,11 +53,11 @@ const AdminUsers = ({ user }) => {
 
   return (
     <Layout>
-      <div className="p-6  min-h-screen">
+      <div className="p-20  bg-gray-100 min-h-screen">
         <h1 className="text-3xl font-semibold mb-6 text-gray-800">All Users</h1>
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
-            <thead className="bg-gray-800 text-white">
+          <table className="min-w-full bg-gray-200 border border-gray-300 rounded-lg shadow-md">
+            <thead className="bg-gray-600 text-white">
               <tr>
                 <th className="px-6 py-3 text-left">#</th>
                 <th className="px-6 py-3 text-left">Name</th>
@@ -66,7 +66,7 @@ const AdminUsers = ({ user }) => {
                 <th className="px-6 py-3 text-left">Update Role</th>
               </tr>
             </thead>
-            <tbody className="text-gray-700">
+            <tbody className="text-gray-900">
               {users && users.map((user, index) => (
                 <tr key={user._id} className="border-b border-gray-200 hover:bg-gray-50">
                   <td className="px-6 py-4">{index + 1}</td>
@@ -76,7 +76,7 @@ const AdminUsers = ({ user }) => {
                   <td className="px-6 py-4">
                     <button
                       onClick={() => updateRole(user._id)}
-                      className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300 ease-in-out"
+                      className="px-4 py-2 bg-blue1 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-300 ease-in-out"
                     >
                       Update Role
                     </button>

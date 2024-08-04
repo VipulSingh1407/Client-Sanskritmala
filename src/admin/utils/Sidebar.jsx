@@ -7,13 +7,13 @@ import { UserData } from "../../context/userContext";
 const Sidebar = () => {
   const { user } = UserData();
   return (
-    <div className="w-64 h-full bg-gray-800 text-white flex flex-col shadow-lg py-20">
-      <div className="p-4 text-2xl font-semibold text-center border-b border-gray-700">
+    <div className="w-64 h-full bg-gray-400 text-blue1 flex flex-col shadow-lg py-20">
+      <div className="p-4 text-2xl font-semibold text-center border-b border-gray-400">
         Dashboard
       </div>
       <ul className="flex-1 mt-4">
-        <li className="hover:bg-gray-700 transition-colors duration-300">
-          <Link to={"/admin/dashboard"} className="flex items-center p-4 hover:text-indigo-400">
+        <li className="hover:bg-gray-500 text-black font-semibold  transition-colors duration-300">
+          <Link to={"/admin/dashboard"} className="flex text-gray-950 items-center p-4 hover:text-blue1">
             <div className="text-xl mr-3">
               <AiFillHome />
             </div>
@@ -21,8 +21,8 @@ const Sidebar = () => {
           </Link>
         </li>
 
-        <li className="hover:bg-gray-700 transition-colors duration-300">
-          <Link to={"/admin/course"} className="flex items-center p-4 hover:text-indigo-400">
+        <li className="hover:bg-gray-700 text-black font-semibold transition-colors duration-300">
+          <Link to={"/admin/course"} className="flex items-center text-gray-900 p-4 hover:text-blue1">
             <div className="text-xl mr-3">
               <FaBook />
             </div>
@@ -30,8 +30,8 @@ const Sidebar = () => {
           </Link>
         </li>
 
-        <li className="hover:bg-gray-700 transition-colors duration-300">
-          <Link to={"/admin/book"} className="flex items-center p-4 hover:text-indigo-400">
+        <li className="hover:bg-gray-700 font-semibold transition-colors duration-300">
+          <Link to={"/admin/book"} className="flex items-center p-4 text-gray-900 hover:text-blue1">
             <div className="text-xl mr-3">
               <FaBook />
             </div>
@@ -39,8 +39,8 @@ const Sidebar = () => {
           </Link>
         </li>
 
-        <li className="hover:bg-gray-700 transition-colors duration-300">
-          <Link to={"/admin/ebooks"} className="flex items-center p-4 hover:text-indigo-400">
+        <li className="hover:bg-gray-700 font-semibold transition-colors duration-300">
+          <Link to={"/admin/ebooks"} className="flex items-center p-4 text-gray-900 hover:text-blue1">
             <div className="text-xl mr-3">
               <FaBook />
             </div>
@@ -48,8 +48,8 @@ const Sidebar = () => {
           </Link>
         </li>
 
-        <li className="hover:bg-gray-700 transition-colors duration-300">
-          <Link to={"/admin/notes"} className="flex items-center p-4 hover:text-indigo-400">
+        <li className="hover:bg-gray-700 font-semibold transition-colors duration-300">
+          <Link to={"/admin/notes"} className="flex items-center text-gray-900 p-4 hover:text-blue1">
             <div className="text-xl mr-3">
               <FaStickyNote />
             </div>
@@ -58,8 +58,8 @@ const Sidebar = () => {
         </li>
 
         {user && user.mainrole === "superadmin" && (
-          <li className="hover:bg-gray-700 transition-colors duration-300">
-            <Link to={"/admin/users"} className="flex items-center p-4 hover:text-indigo-400">
+          <li className="hover:bg-gray-700 font-semibold transition-colors duration-300">
+            <Link to={"/admin/users"} className="flex items-center text-gray-900 p-4 hover:text-blue1">
               <div className="text-xl mr-3">
                 <FaUserAlt />
               </div>
@@ -68,8 +68,8 @@ const Sidebar = () => {
           </li>
         )}
 
-        <li className="hover:bg-gray-700 transition-colors duration-300">
-          <Link to={"/account"} className="flex items-center p-4 hover:text-indigo-400">
+        <li className="hover:bg-gray-700 font-semibold transition-colors duration-300">
+          <Link to={"/account"} className="flex text-red-600 items-center p-4 hover:text-red-500">
             <div className="text-xl mr-3">
               <AiOutlineLogout />
             </div>

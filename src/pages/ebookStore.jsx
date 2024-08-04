@@ -10,16 +10,16 @@ const EbookStore = () => {
   }, [fetchEbooks]);
 
   return (
-    <div className="container   mx-auto p-4 py-28">
+    <div className="container text-gray-100   mx-auto p-4 py-28">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-yellow-200 mb-2 ">ई-बुक्स स्टोर</h1>
-        <p className="text-lg font-medium text-gray-500">
+        <h1 className="text-4xl font-bold text-blue1 mb-2 ">ई-बुक्स स्टोर</h1>
+        <p className="text-lg font-medium text-gray-800">
           Discover our collection of eBooks and explore a world of knowledge at your fingertips. Purchase and read your favorite books instantly.
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {ebooks.length === 0 ? (
-          <p className="col-span-full text-center text-gray-600">No eBooks available</p>
+          <p className="col-span-full text-center text-gray-700">No eBooks available</p>
         ) : (
           ebooks.map((ebook) => (
             <EbookCard key={ebook._id} ebook={ebook} />

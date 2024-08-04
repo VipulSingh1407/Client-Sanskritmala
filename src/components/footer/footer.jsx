@@ -5,7 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-gray-600 bg-bg text-gray-300 py-10">
+    <footer className="border-t border-gray-600 bg-gray-600 text-gray-100 py-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Contact Us Section */}
         <div>
@@ -19,13 +19,13 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Useful Links</h3>
           <ul>
             <li className="mb-2">
-              <Link to="/about" className="hover:text-orange">About Us</Link>
+              <Link to="/about" className="hover:text-blue1">About Us</Link>
             </li>
             <li className="mb-2">
-              <Link to="/courses" className="hover:text-orange">Courses</Link>
+              <Link to="/courses" className="hover:text-blue1">Courses</Link>
             </li>
             <li className="mb-2">
-              <Link to="/privacy" className="hover:text-orange">Privacy</Link>
+              <Link to="/privacy" className="hover:text-blue1">Privacy</Link>
             </li>
           </ul>
         </div>
@@ -34,16 +34,16 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-4">
-            <a href="https://x.com/ScholarRankAI" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-orange">
+            <a href="https://x.com/ScholarRankAI" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-blue1">
               <FaXTwitter size={24} />
             </a>
-            <a href="https://www.facebook.com/Scholarrank/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-orange">
+            <a href="https://www.facebook.com/Scholarrank/" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-blue1">
               <FaFacebook size={24} />
             </a>
-            <a href="https://www.instagram.com/scholarrank/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-orange">
+            <a href="https://www.instagram.com/scholarrank/" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-blue1">
               <FaInstagram size={24} />
             </a>
-            <a href="https://www.linkedin.com/company/scholarrank/about/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-orange">
+            <a href="https://www.linkedin.com/company/scholarrank/about/" target="_blank" rel="noopener noreferrer" className="text-gray-100 hover:text-blue1">
               <FaLinkedin size={24} />
             </a>
           </div>

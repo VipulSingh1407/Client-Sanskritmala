@@ -171,20 +171,20 @@ const Lecture = ({ user }) => {
       {loading ? (
         <Loading />
       ) : (
-        <div className="flex flex-col lg:flex-row min-h-screen bg-gray-900 text-white p-6 py-40">
+        <div className="flex flex-col lg:flex-row min-h-screen mt-7 py-20 bg-gray-100 text-blue1 p-4 lg:py-20 xl:py-20 px-4">
           <div className="flex-1 lg:w-2/3 lg:pr-6">
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
+            <div className="bg-gray-300 p-4 rounded-lg shadow-lg mb-6">
               <div className="text-lg font-bold mb-4">
                 Lecture Completed: {completedLec} out of {lectLength}
               </div>
               <progress
-                className="w-full bg-gray-700 rounded"
+                className="w-full bg-white text-white rounded"
                 value={completed}
                 max={100}
               ></progress>
               <div className="text-right text-sm mt-2">{completed} %</div>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div className="bg-gray-300 p-4 rounded-lg shadow-lg">
               {lecLoading ? (
                 <Loading />
               ) : (
@@ -201,13 +201,13 @@ const Lecture = ({ user }) => {
                         autoPlay
                         onEnded={() => addProgress(lecture._id)}
                       ></video>
-                      <h1 className="text-2xl font-bold mt-4">{lecture.title}</h1>
-                      <h3 className="text-lg font-semibold mt-2">
+                      <h1 className="text-2xl lg:text-3xl font-bold mt-4">{lecture.title}</h1>
+                      <h3 className="text-lg lg:text-xl text-gray-900 font-semibold mt-2">
                         {lecture.description}
                       </h3>
                     </>
                   ) : (
-                    <h1 className="text-2xl font-bold">Please Select a Lecture</h1>
+                    <h1 className="text-2xl lg:text-3xl font-bold">Please Select a Lecture</h1>
                   )}
                 </>
               )}
@@ -216,7 +216,7 @@ const Lecture = ({ user }) => {
           <div className="flex-1 lg:w-1/3 lg:pl-6">
             {user && user.role === "admin" && (
               <button
-                className="bg-yellow-200 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-orange transition-all duration-300 mb-6"
+                className="bg-blue1 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-orange transition-all duration-300 mb-6"
                 onClick={() => setShow(!show)}
               >
                 {show ? "Close" : "Add Lecture +"}
@@ -224,10 +224,10 @@ const Lecture = ({ user }) => {
             )}
 
             {show && (
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-                <h2 className="text-2xl font-bold mb-4">Add Lecture</h2>
+              <div className="bg-gray-300 p-4 rounded-lg shadow-lg mb-6">
+                <h2 className="text-2xl lg:text-3xl font-bold mb-4">Add Lecture</h2>
                 <form onSubmit={submitHandler}>
-                  <label htmlFor="title" className="block text-sm font-medium mb-2">
+                  <label htmlFor="title" className="block text-gray-800 text-sm lg:text-base font-medium mb-2">
                     Title
                   </label>
                   <input
@@ -236,10 +236,10 @@ const Lecture = ({ user }) => {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     required
-                    className="w-full p-2 mb-4 rounded border border-gray-600 bg-gray-900 text-white"
+                    className="w-full p-2 mb-4 rounded border border-gray-400 bg-white text-gray-900"
                   />
 
-                  <label htmlFor="description" className="block text-sm font-medium mb-2">
+                  <label htmlFor="description" className="block text-gray-800 text-sm lg:text-base font-medium mb-2">
                     Description
                   </label>
                   <input
@@ -248,7 +248,7 @@ const Lecture = ({ user }) => {
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     required
-                    className="w-full p-2 mb-4 rounded border border-gray-600 bg-gray-900 text-white"
+                    className="w-full p-2 mb-4 rounded border border-gray-400 bg-white text-gray-900"
                   />
 
                   <input
@@ -256,7 +256,7 @@ const Lecture = ({ user }) => {
                     placeholder="Choose video"
                     onChange={changeVideoHandler}
                     required
-                    className="w-full p-2 mb-4 rounded border border-gray-600 bg-gray-900 text-white"
+                    className="w-full p-2 mb-4 rounded border border-gray-400 bg-white text-gray-900"
                   />
 
                   {videoPrev && (
@@ -270,7 +270,7 @@ const Lecture = ({ user }) => {
                   <button
                     type="submit"
                     disabled={btnLoading}
-                    className="bg-orange text-white py-2 px-4 rounded-lg shadow-lg hover:bg-yellow-200 transition-all duration-300"
+                    className="bg-blue1 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-blue-500 transition-all duration-300"
                   >
                     {btnLoading ? "Please Wait..." : "Add"}
                   </button>
@@ -278,37 +278,39 @@ const Lecture = ({ user }) => {
               </div>
             )}
 
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h2 className="text-2xl font-bold mb-4">Lectures</h2>
+            <div className="bg-gray-300 p-4 rounded-lg shadow-lg">
+              <h2 className="text-2xl lg:text-3xl font-bold mb-4">Lectures</h2>
               {lectures && lectures.length > 0 ? (
-                lectures.map((e, i) => (
-                  <div key={e._id} className="mb-4">
-                    <div
-                      onClick={() => fetchLecture(e._id)}
-                      className={`p-4 cursor-pointer rounded-lg ${
-                        lecture._id === e._id
-                          ? "bg-yellow-200 text-black"
-                          : "bg-gray-700 text-gray-300"
-                      } transition-all duration-300`}
-                    >
-                      {i + 1}. {e.title}{" "}
-                      {progress[0] &&
-                        progress[0].completedLectures.includes(e._id) && (
-                          <span className="ml-2 text-green-400">
-                            <TiTick />
-                          </span>
-                        )}
-                    </div>
-                    {user && user.role === "admin" && (
-                      <button
-                        className="bg-red-500 text-white py-1 px-3 rounded-lg shadow-lg hover:bg-red-600 transition-all duration-300 mt-2"
-                        onClick={() => deleteHandler(e._id)}
+                <div className="space-y-4">
+                  {lectures.map((e, i) => (
+                    <div key={e._id} className="flex flex-col mb-4">
+                      <div
+                        onClick={() => fetchLecture(e._id)}
+                        className={`p-4 cursor-pointer rounded-lg ${
+                          lecture._id === e._id
+                            ? "bg-blue1 text-white"
+                            : "bg-white text-gray-900"
+                        } transition-all duration-300`}
                       >
-                        Delete {e.title}
-                      </button>
-                    )}
-                  </div>
-                ))
+                        {i + 1}. {e.title}{" "}
+                        {progress[0] &&
+                          progress[0].completedLectures.includes(e._id) && (
+                            <span className="ml-2 text-green-400">
+                              <TiTick />
+                            </span>
+                          )}
+                      </div>
+                      {user && user.role === "admin" && (
+                        <button
+                          className="bg-red-500 text-white py-1 px-3 rounded-lg shadow-lg hover:bg-red-600 transition-all duration-300 mt-2"
+                          onClick={() => deleteHandler(e._id)}
+                        >
+                          Delete {e.title}
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
               ) : (
                 <p>No Lectures Yet!</p>
               )}

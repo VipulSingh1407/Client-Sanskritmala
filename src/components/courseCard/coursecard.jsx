@@ -29,13 +29,13 @@ const CourseCard = ({ course }) => {
   };
 
   return (
-    <div className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+    <div className="bg-gray-300 text-black rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
       <img src={`${server}/${course.image}`} alt={course.title} className="w-full h-48 object-cover" />
       <div className="p-6">
-        <h3 className="text-2xl font-semibold mb-2">{course.title}</h3>
-        <p className="text-gray-400 mb-2">Instructor: {course.createdBy}</p>
-        <p className="text-gray-400 mb-2">Duration: {course.duration} weeks</p>
-        <p className="text-gray-400 mb-4">Price: ₹{course.price}</p>
+        <h3 className="text-2xl text-blue1 font-semibold mb-2">{course.title}</h3>
+        <p className="text-gray-900 mb-2">Instructor: {course.createdBy}</p>
+        <p className="text-gray-900 mb-2">Duration: {course.duration} weeks</p>
+        <p className="text-gray-900 mb-4">Price: ₹{course.price}</p>
 
         {isAuth ? (
           <>
@@ -44,14 +44,14 @@ const CourseCard = ({ course }) => {
                 {user.subscription.includes(course._id) ? (
                   <button
                     onClick={() => navigate(`/course/study/${course._id}`)}
-                    className="w-full py-2 px-4 bg-orange hover:bg-yellow-200 text-black rounded-md shadow-md transition-colors duration-300 ease-in-out"
+                    className="w-full py-2 px-4 bg-blue1 hover:bg-blue-200 text-white text-lg rounded-md shadow-md transition-colors duration-300 ease-in-out"
                   >
                     Study
                   </button>
                 ) : (
                   <button
                     onClick={() => navigate(`/course/${course._id}`)}
-                    className="w-full py-2 px-4 bg-orange hover:bg-yellow-200 text-black rounded-md shadow-md transition-colors duration-300 ease-in-out"
+                    className="w-full py-2 px-4 bg-blue1 hover:bg-blue-200 text-white text-lg rounded-md shadow-md transition-colors duration-300 ease-in-out"
                   >
                     Get Started
                   </button>
@@ -60,7 +60,7 @@ const CourseCard = ({ course }) => {
             ) : (
               <button
                 onClick={() => navigate(`/course/study/${course._id}`)}
-                className="w-full py-2 px-4 bg-orange hover:bg-yellow-200 text-black rounded-md shadow-md transition-colors duration-300 ease-in-out"
+                className="w-full py-2 px-4 bg-blue1 hover:bg-blue-200 text-white text-lg rounded-md shadow-md transition-colors duration-300 ease-in-out"
               >
                 Study
               </button>
@@ -69,7 +69,7 @@ const CourseCard = ({ course }) => {
         ) : (
           <button
             onClick={() => navigate("/login")}
-            className="w-full py-2 px-4 bg-orange hover:bg-yellow-200 text-black rounded-md shadow-md transition-colors duration-300 ease-in-out"
+            className="w-full py-2 px-4 bg-blue1 hover:bg-blue-200 text-white text-lg rounded-md shadow-md transition-colors duration-300 ease-in-out"
           >
             Get Started
           </button>
@@ -78,7 +78,7 @@ const CourseCard = ({ course }) => {
         {user && user.role === "admin" && (
           <button
             onClick={() => deleteHandler(course._id)}
-            className="w-full py-2 px-4 bg-red-600 hover:bg-red-700 text-white rounded-md shadow-md mt-4 transition-colors duration-300 ease-in-out"
+            className="w-full py-2 px-4 bg-red-600 hover:bg-red-700 text-white text-lg rounded-md shadow-md mt-4 transition-colors duration-300 ease-in-out"
           >
             Delete
           </button>

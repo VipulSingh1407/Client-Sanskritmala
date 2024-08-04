@@ -101,27 +101,27 @@ const BookDescription = () => {
       ) : (
         <>
           {book && (
-            <div className="container  mx-auto px-4 py-20 lg:py-40">
-              <div className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl mx-auto transition-transform transform hover:scale-105 duration-300 ease-in-out">
+            <div className="container mx-auto px-4 py-28 sm:py-20 lg:py-40 ">
+              <div className="bg-gray-300 text-blue1 rounded-lg shadow-lg overflow-hidden w-full max-w-4xl mx-auto transition-transform transform hover:scale-105 duration-300 ease-in-out">
                 <div className="flex flex-col lg:flex-row">
                   <img
                     src={`${server}/${book.image}`}
                     alt={book.title}
                     className="w-full lg:w-1/2 h-64 lg:h-80 object-cover rounded-lg shadow-md"
                   />
-                  <div className="lg:ml-6 flex-1 p-6">
-                    <h2 className="text-4xl font-bold mb-4 text-indigo-400">{book.title}</h2>
-                    <p className="text-lg mb-2 text-gray-400">Author: <span className="font-semibold">{book.author}</span></p>
-                    <p className="text-lg mb-4 text-gray-300">{book.description}</p>
-                    <p className="text-xl font-semibold mb-6 text-yellow-500">Price: ₹{book.price}</p>
-                    
+                  <div className="lg:ml-6 flex-1 p-4 sm:p-6 lg:p-8">
+                    <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-blue1">{book.title}</h2>
+                    <p className="text-base sm:text-lg mb-2 text-gray-900">Author: <span className="font-semibold">{book.author}</span></p>
+                    <p className="text-base sm:text-lg mb-4 text-gray-900">{book.description}</p>
+                    <p className="text-lg sm:text-xl font-semibold mb-6 text-blue1">Price: ₹{book.price}</p>
+
                     {showAddressForm ? (
                       <>
                         <textarea
                           value={address}
                           onChange={handleAddressChange}
                           rows="4"
-                          className="w-full p-3 mb-4 border border-gray-700 rounded-md bg-gray-800 text-white"
+                          className="w-full p-3 mb-4 border border-gray-500 rounded-md bg-white text-black"
                           placeholder="Enter your delivery address"
                         />
                         <button

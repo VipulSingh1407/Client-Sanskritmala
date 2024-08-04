@@ -88,8 +88,8 @@ const NotesDescription = () => {
       ) : (
         <>
           {note && (
-            <div className="container mx-auto px-4 py-20 lg:py-40">
-              <div className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl mx-auto transition-transform transform hover:scale-105 duration-300 ease-in-out">
+            <div className="container mx-auto px-4 py-28 lg:py-40">
+              <div className="bg-gray-300 text-blue1 rounded-lg shadow-xl overflow-hidden w-full max-w-4xl mx-auto transition-transform transform hover:scale-105 duration-300 ease-in-out">
                 <div className="flex flex-col lg:flex-row">
                   <img
                     src={`${server}/${note.coverImage}`}
@@ -98,8 +98,8 @@ const NotesDescription = () => {
                   />
                   <div className="lg:ml-6 flex-1 p-6">
                     <h2 className="text-4xl font-bold mb-4 text-indigo-400">{note.title}</h2>
-                    <p className="text-lg mb-4 text-gray-300">{note.description}</p>
-                    <p className="text-xl font-semibold mb-6 text-yellow-500">Price: ₹{note.price}</p>
+                    <p className="text-lg mb-4 text-gray-900">{note.description}</p>
+                    <p className="text-xl font-semibold mb-6 text-blue1">Price: ₹{note.price}</p>
 
                     <button
                       onClick={handlePurchase}

@@ -3,8 +3,8 @@ import { CourseData } from "../../context/courseContext";
 import CourseCard from "../../components/courseCard/coursecard";
 import { EbookData } from "../../context/ebookContext";
 import EbookCard from "../../components/ebookcard";
-import { NotesData } from "../../context/notesContext"; // Adjust the path as necessary
-import NotesCard from "../../components/notesCard"; // Adjust the path as necessary
+import { NotesData } from "../../context/notesContext";
+import NotesCard from "../../components/notesCard";
 import { FaBook, FaGraduationCap, FaStickyNote } from "react-icons/fa";
 
 const Dashboard = () => {
@@ -19,8 +19,8 @@ const Dashboard = () => {
   }, [fetchMyEbooks, fetchMyNotes]);
 
   return (
-    <div className="flex min-h-screen bg-gray-900 py-24 text-white">
-      <aside className="w-64 bg-gray-800 p-4 shadow-md ">
+    <div className="flex flex-col  py-20 md:flex-row min-h-screen bg-gray-100 text-blue1">
+      <aside className="w-full h-full md:w-64 bg-gray-400 p-4 shadow-md md:h-screen">
         <h2 className="text-2xl font-bold mb-4 flex items-center">
           <span className="mr-2"><FaGraduationCap /></span>
           Dashboard
@@ -29,7 +29,7 @@ const Dashboard = () => {
           <button
             onClick={() => setActiveTab("courses")}
             className={`w-full py-2 px-4 mb-2 flex items-center rounded-md transition-colors duration-300 ${
-              activeTab === "courses" ? "bg-yellow-200 text-black" : "bg-gray-700 text-gray-300"
+              activeTab === "courses" ? "bg-blue1 text-white" : "bg-white text-gray-900"
             }`}
           >
             <FaGraduationCap className="mr-2" />
@@ -38,7 +38,7 @@ const Dashboard = () => {
           <button
             onClick={() => setActiveTab("ebooks")}
             className={`w-full py-2 px-4 mb-2 flex items-center rounded-md transition-colors duration-300 ${
-              activeTab === "ebooks" ? "bg-yellow-200 text-black" : "bg-gray-700 text-gray-300"
+              activeTab === "ebooks" ? "bg-blue1 text-white" : "bg-white text-gray-900"
             }`}
           >
             <FaBook className="mr-2" />
@@ -47,7 +47,7 @@ const Dashboard = () => {
           <button
             onClick={() => setActiveTab("notes")}
             className={`w-full py-2 px-4 flex items-center rounded-md transition-colors duration-300 ${
-              activeTab === "notes" ? "bg-yellow-200 text-black" : "bg-gray-700 text-gray-300"
+              activeTab === "notes" ? "bg-blue1 text-white" : "bg-white text-gray-900"
             }`}
           >
             <FaStickyNote className="mr-2" />
@@ -56,13 +56,13 @@ const Dashboard = () => {
         </nav>
       </aside>
 
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-4 md:p-8">
         {activeTab === "courses" ? (
           <>
-            <h2 className="text-4xl font-extrabold mb-8 text-center relative">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center relative">
               <span className="relative inline-block">
                 <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 opacity-40 blur-sm -z-10"></span>
-                <span className="relative block text-3xl animate-pulse effect-3d">
+                <span className="relative block text-2xl md:text-3xl animate-pulse effect-3d">
                   Your Enrolled Courses
                 </span>
               </span>
@@ -74,17 +74,17 @@ const Dashboard = () => {
                 ))
               ) : (
                 <div className="col-span-1 sm:col-span-2 lg:col-span-3 text-center">
-                  <p className="text-xl font-semibold">No courses enrolled yet.</p>
+                  <p className="text-xl text-gray-800 font-semibold">No courses enrolled yet.</p>
                 </div>
               )}
             </div>
           </>
         ) : activeTab === "ebooks" ? (
           <>
-            <h2 className="text-4xl font-extrabold mb-8 text-center relative">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center relative">
               <span className="relative inline-block">
                 <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 opacity-40 blur-sm -z-10"></span>
-                <span className="relative block text-3xl animate-pulse effect-3d">
+                <span className="relative block text-2xl md:text-3xl animate-pulse effect-3d">
                   Your Purchased eBooks
                 </span>
               </span>
@@ -96,17 +96,17 @@ const Dashboard = () => {
                 ))
               ) : (
                 <div className="col-span-1 sm:col-span-2 lg:col-span-3 text-center">
-                  <p className="text-xl font-semibold">No eBooks purchased yet.</p>
+                  <p className="text-xl text-gray-800 font-semibold">No eBooks purchased yet.</p>
                 </div>
               )}
             </div>
           </>
         ) : (
           <>
-            <h2 className="text-4xl font-extrabold mb-8 text-center relative">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-center relative">
               <span className="relative inline-block">
                 <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 opacity-40 blur-sm -z-10"></span>
-                <span className="relative block text-3xl animate-pulse effect-3d">
+                <span className="relative block text-2xl md:text-3xl animate-pulse effect-3d">
                   Your Purchased Notes
                 </span>
               </span>
@@ -118,7 +118,7 @@ const Dashboard = () => {
                 ))
               ) : (
                 <div className="col-span-1 sm:col-span-2 lg:col-span-3 text-center">
-                  <p className="text-xl font-semibold">No notes purchased yet.</p>
+                  <p className="text-xl text-gray-800 font-semibold">No notes purchased yet.</p>
                 </div>
               )}
             </div>

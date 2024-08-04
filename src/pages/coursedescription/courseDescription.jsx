@@ -92,8 +92,8 @@ const CourseDescription = ({ user }) => {
       ) : (
         <>
           {course && (
-            <div className="container mx-auto px-4 py-40">
-              <div className="bg-gray-900 text-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl mx-auto">
+            <div className="container bg-gray-100 mx-auto px-4 py-40">
+              <div className="bg-gray-300 text-blue1 rounded-lg shadow-xl overflow-hidden w-full max-w-4xl mx-auto">
                 {/* Adjusted margin for top and bottom */}
                 <div className="flex flex-col lg:flex-row">
                   <img
@@ -103,14 +103,14 @@ const CourseDescription = ({ user }) => {
                   />
                   <div className="lg:ml-6 flex-1 p-6">
                     <h2 className="text-3xl font-bold mb-4">{course.title}</h2>
-                    <p className="text-lg mb-2">Instructor: <span className="font-semibold">{course.createdBy}</span></p>
-                    <p className="text-lg mb-4">Duration: <span className="font-semibold">{course.duration} weeks</span></p>
-                    <p className="text-lg mb-6">{course.description}</p>
-                    <p className="text-xl font-semibold mb-6">Get started with this course for just ₹{course.price}</p>
+                    <p className="text-lg text-gray-900 mb-2">Instructor: <span className="font-semibold">{course.createdBy}</span></p>
+                    <p className="text-lg text-gray-900 mb-4">Duration: <span className="font-semibold">{course.duration} weeks</span></p>
+                    <p className="text-lg text-gray-800 mb-6">{course.description}</p>
+                    <p className="text-xl text-gray-900 font-semibold mb-6">Get started with this course for just ₹{course.price}</p>
                     {user && user.subscription.includes(course._id) ? (
                       <button
                         onClick={() => navigate(`/course/study/${course._id}`)}
-                        className="w-full py-2 px-4 bg-orange hover:bg-yellow-200 text-white rounded-md shadow-lg transition-transform transform hover:scale-105 duration-300"
+                        className="w-full py-2 px-4 bg-blue1 hover:bg-blue-500 text-white rounded-md shadow-lg transition-transform transform hover:scale-105 duration-300"
                       >
                         Study
                       </button>

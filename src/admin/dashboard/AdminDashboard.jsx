@@ -53,9 +53,9 @@ const AdminDashboard = ({ user }) => {
 
   return (
     <Layout>
-      <div className="flex justify-center items-center min-h-screen bg-gray-900 p-4">
-        <div className="bg-gray-800 text-white rounded-lg shadow-lg p-6 max-w-4xl w-full">
-          <h1 className="text-2xl font-bold mb-4 text-center text-caribbeangreen-200">Admin Dashboard</h1>
+      <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+        <div className="bg-gray-300 text-black rounded-lg shadow-lg p-6 max-w-4xl w-full">
+          <h1 className="text-2xl font-bold mb-4 text-center text-blue1">Admin Dashboard</h1>
           <div className="mb-6">
             <Bar data={data} options={{
               responsive: true,

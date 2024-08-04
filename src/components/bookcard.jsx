@@ -29,7 +29,7 @@ const BookCard = ({ book }) => {
   };
 
   return (
-    <div className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out max-w-xs sm:max-w-sm lg:max-w-md h-full flex flex-col">
+    <div className="bg-gray-300 text-blue1 rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out max-w-xs sm:max-w-sm lg:max-w-md h-full flex flex-col">
       <img
         src={`${server}/${book.image}`}
         alt={book.title}
@@ -37,8 +37,8 @@ const BookCard = ({ book }) => {
       />
       <div className="p-6 flex-1 flex flex-col">
         <h3 className="text-2xl font-semibold mb-2">{book.title}</h3>
-        <p className="text-gray-400 mb-2">Author: {book.author}</p>
-        <p className="text-gray-400 mb-2">Price: ₹{book.price}</p>
+        <p className="text-gray-900 mb-2">Author: {book.author}</p>
+        <p className="text-gray-900 mb-2">Price: ₹{book.price}</p>
 
         <div className="flex-1 flex items-end">
           {isAuth ? (
@@ -47,7 +47,7 @@ const BookCard = ({ book }) => {
                 <div className="flex flex-col gap-4">
                   <button
                     onClick={() => navigate(`/book/modify/${book._id}`)}
-                    className="w-full py-2 px-4 bg-orange hover:bg-yellow-200 text-black rounded-md shadow-md transition-transform transform hover:scale-105 duration-300 ease-in-out"
+                    className="w-full py-2 px-4 bg-blue1 hover:bg-blue-500 text-white rounded-md shadow-md transition-transform transform hover:scale-105 duration-300 ease-in-out"
                   >
                     Modify
                   </button>
@@ -62,7 +62,7 @@ const BookCard = ({ book }) => {
               {user && user.role !== "admin" && (
                 <button
                   onClick={() => navigate(`/book/${book._id}`)}
-                  className="w-full py-2 px-4 bg-orange hover:bg-yellow-200 text-black rounded-md shadow-md transition-transform transform hover:scale-105 duration-300 ease-in-out"
+                  className="w-full py-2 px-4 bg-blue1 hover:bg-blue-500 text-white rounded-md shadow-md transition-transform transform hover:scale-105 duration-300 ease-in-out"
                 >
                   View
                 </button>
@@ -71,7 +71,7 @@ const BookCard = ({ book }) => {
           ) : (
             <button
               onClick={() => navigate("/login")}
-              className="w-full py-2 px-4 bg-orange hover:bg-yellow-200 text-black rounded-md shadow-md transition-transform transform hover:scale-105 duration-300 ease-in-out"
+              className="w-full py-2 px-4 bg-blue1 hover:bg-blue-500 text-white rounded-md shadow-md transition-transform transform hover:scale-105 duration-300 ease-in-out"
             >
               Login to View
             </button>

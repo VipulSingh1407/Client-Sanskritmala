@@ -9,7 +9,7 @@ import Collaboration from '../../components/collaboration'
 const Home = () => {
    const navigate=useNavigate()
   return (
-    <div className='bg-gray-900'>
+    <div className='bg-gray-100'>
    <HeroSection/>
    <Collaboration/>
    <USPSection/>

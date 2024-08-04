@@ -35,30 +35,43 @@ const USPSection = () => {
   };
 
   return (
-    <div className="bg-gray-900 font-ancient text-gray-300 py-12">
+    <div className="bg-gray-100 font-ancient text-black py-12">
       <motion.div
-        className="max-w-6xl mx-auto flex flex-col md:flex-row items-center px-4"
+        className="max-w-7xl mx-auto flex flex-col md:flex-row items-center px-4"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <motion.div variants={itemVariants} className="flex-1 md:mr-8 mb-8 md:mb-0 text-center md:text-left">
+        <motion.div
+          variants={itemVariants}
+          className="flex-1 md:mr-8 mb-8 md:mb-0 text-center md:text-left"
+        >
           <motion.div
-            className="text-center font-hindi mb-4 text-2xl font-semibold text-yellow-100"
+            className="text-center font-hindi mb-4 text-3xl font-semibold text-blue1"
             variants={itemVariants}
           >
             एक रुपये में आखिर क्या मिलता है?
           </motion.div>
-          <h2 className="text-4xl font-bold mb-4">{uspData.title}</h2>
-          <p className="text-lg mb-4">{uspData.description}</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">{uspData.title}</h2>
+          <p className="text-base md:text-xl text-gray-900 mb-4">{uspData.description}</p>
           <div className="flex justify-center md:justify-start space-x-4">
-            <a href={uspData.linkCourses} className="bg-orange text-black  px-4 py-2 rounded-lg hover:bg-yellow-100 transition-colors duration-300 flex items-center">
+            <a
+              href={uspData.linkCourses}
+              className="bg-blue1 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center"
+            >
               <span className="mr-2">🎓</span> Learn More
             </a>
           </div>
         </motion.div>
-        <motion.div variants={imageVariants} className="flex-1">
-          <img src={one} alt="USP" className="w-full h-auto rounded-lg" />
+        <motion.div
+          variants={imageVariants}
+          className="flex-1 flex justify-center"
+        >
+          <img
+            src={one}
+            alt="USP"
+            className="w-full max-w-sm h-auto rounded-sm"
+          />
         </motion.div>
       </motion.div>
     </div>

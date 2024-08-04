@@ -2,7 +2,7 @@ import React from 'react';
 import construction from '../assets/construction.png'
 const Test = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <img 
         src={construction} 
         alt="Under Construction" 

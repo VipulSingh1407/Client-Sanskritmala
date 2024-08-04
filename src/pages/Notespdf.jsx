@@ -65,17 +65,17 @@ const NotesRead = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-900 text-white py-20 px-4">
+    <div className="flex flex-col items-center min-h-screen bg-gray-100 text-blue1 py-28 px-4">
       <h1 className="text-4xl font-extrabold mb-6 text-center">
         Read Your Note
       </h1>
       {loading ? (
-        <div className="flex items-center justify-center w-full max-w-4xl bg-gray-800 p-8 rounded-lg shadow-lg">
+        <div className="flex items-center justify-center w-full max-w-4xl bg-gray-300 p-8 rounded-lg shadow-lg">
           <p className="text-lg">Loading PDF...</p>
         </div>
       ) : pdfUrl ? (
         <div
-          className="relative w-full max-w-4xl bg-gray-800 p-4 rounded-lg shadow-lg"
+          className="relative w-full max-w-4xl bg-gray-300 p-4 rounded-lg shadow-lg"
           ref={viewerRef}
         >
           <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
